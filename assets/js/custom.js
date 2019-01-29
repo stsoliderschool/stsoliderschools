@@ -77,6 +77,17 @@
 }(jQuery));
 
 
+$(document).ready(function () {
+    $(document).click(function (event) {
+        var clickover = $(event.target);
+        var a        = $(".navbar-collapse");
+        var _opened = a[0].classList.contains('in');
+        if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+            $("button.navbar-toggle").click();
+        }
+    });
+});
+
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -106,3 +117,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 }
+
+
+
